@@ -34,9 +34,10 @@ extern int Final_speed[8] ;
 
 }
 
-   void normalize()
+   void normalize(int max_speed)
    {    float MAX =0;
         float scale;
+        float max_speedF=max_speed;
 
 
        for(int i=0;i<8;i++)
@@ -46,7 +47,7 @@ extern int Final_speed[8] ;
        }
         if(MAX>200)
         {
-            scale=float(200.0/MAX);
+            scale=float(max_speedF/MAX);
             for(int i=0;i<8;i++)
                 Final_speed[i]*=scale;
 
